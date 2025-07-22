@@ -50,3 +50,42 @@ module "firewall-allow-9000" {
   target_tags   = local.ssh_target_tags
 }
 
+module "firewall-allow-8081" {
+  source = "git::https://github.com/nasir19noor/terraform.git//gcp/modules/firewall"
+
+  project       = local.project_id
+  name          = "allow-service-8081"
+  network       = local.network
+  description   = "allow container port"
+  protocol      = local.ssh_protocol
+  ports         = ["8081"]
+  source_ranges = local.ssh_source_ranges
+  target_tags   = local.ssh_target_tags
+}
+
+module "firewall-allow-8080" {
+  source = "git::https://github.com/nasir19noor/terraform.git//gcp/modules/firewall"
+
+  project       = local.project_id
+  name          = "allow-jenkins-port-8080"
+  network       = local.network
+  description   = "allow Jenkins port"
+  protocol      = local.ssh_protocol
+  ports         = ["8080"]
+  source_ranges = local.ssh_source_ranges
+  target_tags   = local.ssh_target_tags
+}
+
+module "firewall-allow-9090" {
+  source = "git::https://github.com/nasir19noor/terraform.git//gcp/modules/firewall"
+
+  project       = local.project_id
+  name          = "allow-prometheus-port-9090"
+  network       = local.network
+  description   = "allow prometheus port"
+  protocol      = local.ssh_protocol
+  ports         = ["9090"]
+  source_ranges = local.ssh_source_ranges
+  target_tags   = local.ssh_target_tags
+}
+

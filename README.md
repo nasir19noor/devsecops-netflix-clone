@@ -169,6 +169,33 @@ Goto Manage Jenkins → Tools → Install JDK(17) and NodeJs(16)→ Click on App
 
 Create the token
 
+Log into SonarQube
+
+Open your SonarQube instance in a web browser
+Sign in with your credentials
+
+
+Navigate to User Token Settings
+
+Click on your profile avatar in the top-right corner
+Select "My Account" from the dropdown menu
+Click on the "Security" tab
+
+
+Generate New Token
+
+In the "Tokens" section, find the "Generate Tokens" area
+Enter a name for your token (e.g., "CI/CD Pipeline", "Jenkins Integration")
+Select the token type:
+
+User Token: For personal use
+Project Analysis Token: For analyzing specific projects
+Global Analysis Token: For analyzing any project
+
+
+Set an expiration date (optional but recommended)
+Click "Generate"
+
 Goto Jenkins Dashboard → Manage Jenkins → Credentials → Add Secret Text. It should look like this
 
 After adding sonar token
